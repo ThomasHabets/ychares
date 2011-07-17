@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Ychares
+# ychares version see-ycr-for-version
 #
 # Author: Thomas Habets <habets@google.com>
 #
@@ -23,6 +23,13 @@
 # it will not continue with the 'clipboard'. There is no way to avoid
 # this that I can see except "make sure you put the challenge in the
 # 'primary'". This means "just select the text and it'll be fine".
+#
+# This script depends on clipsniff, x11type and ycr being in the PATH.
+#
+# http://github.com/ThomasHabets/clipsniff
+# http://github.com/ThomasHabets/x11type
+# http://github.com/ThomasHabets/ycr
+# (ycr is the same package this script is in)
 #
 # ------------------------------
 # Copyright 2011 Google Inc.
