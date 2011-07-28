@@ -67,7 +67,7 @@ def challenge_response(yubikey, slot, challenge):
 def cmd_challenge():
     try:
         yubikey = yubico.find_yubikey()
-    except usb.USBError as inst:
+    except (usb.USBError, yubico.yubikey.YubiKeyError) as inst:
         print >>sys.stderr, "Yubikey comm error: %s" % inst
         sys.exit(2)
 

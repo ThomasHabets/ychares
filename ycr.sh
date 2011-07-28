@@ -24,7 +24,8 @@
 # this that I can see except "make sure you put the challenge in the
 # 'primary'". This means "just select the text and it'll be fine".
 #
-# This script depends on clipsniff, x11type and ycr being in the PATH.
+# This script depends on clipsniff, x11type and ychares being in the
+# PATH.
 #
 # http://github.com/ThomasHabets/clipsniff
 # http://github.com/ThomasHabets/x11type
@@ -53,6 +54,9 @@ fail() {
     exit 1
 }
 
+ychares --help > /dev/null 2>/dev/null || {
+    fail "Unable to execute ychares"
+}
 
 for clip in primary clipboard; do
     REPLY=$(clipsniff -r $clip | ychares --challenge 2>/dev/null)
@@ -61,7 +65,7 @@ for clip in primary clipboard; do
     # ychares could not talk to the yubikey at all
     if [ $STATUS = 2 ]; then
         fail "ychares was unable to communicate with YubiKey. \
-Try running ycr from the command line."
+Try running ychares from the command line for details."
     fi
 
     # Did the challenge-response succeed? If so don't continue.
