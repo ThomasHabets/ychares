@@ -9,6 +9,11 @@ http://code.google.com/p/ychares/
 http://github.com/ThomasHabets/ychares/
 
 
+Dependencies:
+  * Yubico Python library. http://github.com/yubico/python-yubico
+  * python-usb:  apt-get install python-usb
+
+
 Program mode:
   $ ychares --program
   Key: 880f9c31095f476f00a0a53f7f779a8180155fb7
