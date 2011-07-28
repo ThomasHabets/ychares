@@ -1,27 +1,27 @@
 #!/usr/bin/env python
-"""YCR
+"""YChaRes
 
 Author: Thomas Habets <habets@google.com>
 
 YubiKey Challenge-Response
 
-http://code.google.com/p/ycr/
-http://github.com/ThomasHabets/ycr/
+http://code.google.com/p/ychares/
+http://github.com/ThomasHabets/ychares/
 
 
 Program mode:
-  $ ycr --program
+  $ ychares --program
   Key: 880f9c31095f476f00a0a53f7f779a8180155fb7
 
 Challenge-response mode:
-  $ ycr --challenge
+  $ ychares --challenge
   1234                                         <-- challenge. Written by user
   7adc93b8ea0b8e3da49ddf35b0486cae0d632713     <-- reply
   123456                                       <-- challenge. Written by user
   a44ff7adfddceb890fc1e12c321cd0d2e26a2a16     <-- reply
   ^D
 
-  $ echo 1234 | ycr --challenge
+  $ echo 1234 | ychares --challenge
   7adc93b8ea0b8e3da49ddf35b0486cae0d632713
 """
 # ------------------------------
@@ -91,9 +91,9 @@ def cmd_program():
 
 
 def cmd_help():
-    print """ycr %(version)s
+    print """ychares %(version)s
 
-ycr  --challenge | --program
+ychares  --challenge | --program
 
 See source for more details.""" % {'version': VERSION}
 

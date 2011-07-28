@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# ychares version see-ycr-for-version
+# ycr.sh version see-ychares-for-version
 #
 # Author: Thomas Habets <habets@google.com>
 #
@@ -10,7 +10,7 @@
 #
 # Basically it's this command, but accounting for error handling and
 # the fact that there's two clipboards in X:
-#     clipsniff | ycr | x11type
+#     clipsniff | ychares | x11type
 #
 # Example use would be SSH login where a PAM module on the server
 # presents the challenge in text. The user would then select that text
@@ -28,8 +28,8 @@
 #
 # http://github.com/ThomasHabets/clipsniff
 # http://github.com/ThomasHabets/x11type
-# http://github.com/ThomasHabets/ycr
-# (ycr is the same package this script is in)
+# http://github.com/ThomasHabets/ychares
+# (ychares is the same package this script is in)
 #
 # ------------------------------
 # Copyright 2011 Google Inc.
@@ -55,12 +55,12 @@ fail() {
 
 
 for clip in primary clipboard; do
-    REPLY=$(clipsniff -r $clip | ycr --challenge 2>/dev/null)
+    REPLY=$(clipsniff -r $clip | ychares --challenge 2>/dev/null)
     STATUS="$?"
 
-    # ycr could not talk to the yubikey at all
+    # ychares could not talk to the yubikey at all
     if [ $STATUS = 2 ]; then
-        fail "ycr was unable to communicate with YubiKey. \
+        fail "ychares was unable to communicate with YubiKey. \
 Try running ycr from the command line."
     fi
 
